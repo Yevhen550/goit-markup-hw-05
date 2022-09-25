@@ -191,7 +191,19 @@ button {
 }
 
 .header-link.link.current {
+  position: relative;
   color: var(--accent-color);
+}
+
+.header-link.link.current::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background: var(--accent-color);
+  border-radius: 2px;
 }
 
 .header-contact-list {
@@ -333,7 +345,7 @@ img {
   box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
     0px 2px 1px rgb(0 0 0 / 20%);
   border-radius: 0px 0px 4px 4px;
-  background-color: #fff
+  background-color: #fff;
 }
 
 .team-box-wrap {
@@ -680,6 +692,7 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   background: var(--primary-title-color);
+  border-radius: 4px;
 }
 
 .close-button {
@@ -699,4 +712,8 @@ img {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
