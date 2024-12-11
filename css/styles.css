@@ -551,12 +551,55 @@ address {
     background-color: var(--cl-success-green);
 }
 
+.footer-form {}
+
+.footer-form-text {}
+
+.footer-form-label {}
+
+.btn {}
+
+.footer-form-btn {}
+
+.footer-form-icon {
+    fill: #2E2F42;
+}
+
 /* #endregion */
 
 /* #region Modal */
-.modal-overlay {}
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
 
-.modal {}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease-in-out;
+}
+
+.modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 480px;
+    max-height: 80%;
+    overflow-y: auto;
+}
 
 .modal-close-btn {}
 
@@ -575,6 +618,16 @@ address {
 .modal-form-text {}
 
 .modal-form-icon {}
+
+.modal-form-check {}
+
+.modal-form-check-text {}
+
+.modal-form-check-box {}
+
+.modal-form-check-icon {}
+
+.modal-form-check-link {}
 
 .modal-form-btn {}
 
