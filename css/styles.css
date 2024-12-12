@@ -590,7 +590,7 @@ address {
     padding: 8px 16px;
     border-radius: 4px;
     border: 1px solid var(--cl-white-background);
-    box-shadow: 0px 4px 4px 0px var(--cl-dark-navy-blue-modal);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     font-size: 12px;
     line-height: 2;
     letter-spacing: 0.04em;
