@@ -703,6 +703,7 @@ address {
     color: var(--cl-dark-navy-blue-modal);
 }
 
+
 .modal-form-check {
     margin-bottom: 24px;
 }
@@ -723,11 +724,19 @@ address {
     width: 16px;
     height: 16px;
     border-radius: 2px;
+    color: transparent;
     border: 1px solid var(--cl-dark-navy-blue-modal);
+    transition: background-color var(--transition-hover-focus), border var(--transition-hover-focus), fill var(--transition-hover-focus);
+}
+
+.modal-standart-checkbox:checked+.modal-form-check-text .modal-form-check-box {
+    background-color: var(--cl-active-ocean);
+    border: none;
+    color: var(--cl-light-cloud);
 }
 
 .modal-form-check-icon {
-    fill: transparent;
+    fill: currentColor;
 }
 
 .modal-form-check-link {
