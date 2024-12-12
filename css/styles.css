@@ -131,7 +131,6 @@ address {
 
 .btn {
     display: block;
-    height: 56px;
     min-width: 169px;
     border: none;
     font-weight: 500;
@@ -517,7 +516,9 @@ address {
     color: var(--cl-light-cloud);
 }
 
-.footer-social {}
+.footer-social {
+    margin-right: 80px;
+}
 
 .footer-social-text {
     font-weight: 500;
@@ -557,18 +558,66 @@ address {
     background-color: var(--cl-success-green);
 }
 
-.footer-form {}
 
-.footer-form-text {}
+/*****  Subscribe-Form  *****/
 
-.footer-form-label {}
+.footer-subscribe {}
 
-.btn {}
+.footer-subscribe-text {
+    margin-bottom: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--cl-white-background);
+}
 
-.footer-form-btn {}
+
+.footer-subscribe-form {
+    display: flex;
+    gap: 24px;
+}
+
+
+.footer-subscribe-label {}
+
+
+.footer-subscribe-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 264px;
+    height: 40px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid var(--cl-white-background);
+    box-shadow: 0px 4px 4px 0px var(--cl-dark-navy-blue-modal);
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: var(--cl-white-background);
+    background-color: transparent;
+}
+
+
+.footer-subscribe-input::placeholder {
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: var(--cl-white-background);
+}
+
+.footer-subscribe-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 165px;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 16px;
+}
 
 .footer-form-icon {
-    fill: var(--cl-white-background);
+    margin-left: 16px;
+    fill: currentColor;
 }
 
 /* #endregion */
@@ -653,7 +702,7 @@ address {
     color: var(--cl-dark-navy-blue);
 }
 
-/* Modal-form */
+/****** Modal-form *****/
 
 .modal-form {}
 
