@@ -575,8 +575,6 @@ address {
 
 /* #region Modal */
 .modal-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-
     position: fixed;
     top: 0;
     left: 0;
@@ -589,7 +587,8 @@ address {
 
     opacity: 0;
     pointer-events: none;
-    transition: opacity 250ms ease-in-out;
+    background-color: var(--cl-dark-navy-blue-modal);
+    transition: opacity var(--transition-hover-focus), visibility var(--transition-hover-focus);
 }
 
 .modal-overlay.is-open {
@@ -598,15 +597,21 @@ address {
 }
 
 .modal {
-    position: relative;
-    background-color: var(--cl-modal-dairy);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 4px;
     padding: 72px 24px 24px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     max-width: 408px;
     width: 100%;
     min-height: 584px;
     overflow-y: auto;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    background-color: var(--cl-modal-dairy);
+    transition: transform var(--transition-hover-focus);
 }
 
 .modal-close-btn {
@@ -620,14 +625,15 @@ address {
     height: 24px;
     padding: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 100%;
+    border-radius: 50%;
     background-color: var(--cl-accent-cornflower);
     color: var(--cl-dark-navy-blue);
-    transition: background-color var(--transition-hover-focus), color var(--transition-hover-focus);
+    transition: background-color var(--transition-hover-focus), border var(--transition-hover-focus);
 }
 
 .modal-close-icon {
     fill: currentColor;
+    transition: fill var(--transition-hover-focus);
 }
 
 .modal-close-btn:hover,
@@ -674,11 +680,14 @@ address {
     width: 100%;
     height: 40px;
     font-size: 12px;
-    line-height: 1.7;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     border-radius: 4px;
+    color: var(--cl-dark-navy-blue-modal);
+    background-color: transparent;
     border: 1px solid var(--cl-dark-navy-blue-modal);
     outline: transparent;
+    transition: border-color var(--transition-hover-focus);
 }
 
 .modal-form-input:hover,
@@ -691,12 +700,23 @@ address {
     top: 50%;
     left: 16px;
     transform: translateY(-50%);
+    transition: fill var(--transition-hover-focus);
+}
+
+
+.modal-form-input:hover+.modal-form-icon,
+.modal-form-input:focus+.modal-form-icon {
+    fill: var(--cl-primary-iris);
 }
 
 .modal-form-message {
     resize: none;
     padding: 8px 16px;
     height: 120px;
+}
+
+.modal-form-textarea-box {
+    margin-bottom: 16px;
 }
 
 .modal-form-message::placeholder {
@@ -724,6 +744,7 @@ address {
     width: 16px;
     height: 16px;
     border-radius: 2px;
+    fill: transparent;
     color: transparent;
     border: 1px solid var(--cl-dark-navy-blue-modal);
     transition: background-color var(--transition-hover-focus), border var(--transition-hover-focus), fill var(--transition-hover-focus);
@@ -733,6 +754,7 @@ address {
     background-color: var(--cl-active-ocean);
     border: none;
     color: var(--cl-light-cloud);
+    fill: var(--cl-light-cloud);
 }
 
 .modal-form-check-icon {
